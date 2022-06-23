@@ -1,5 +1,5 @@
 from random import randint 
-from time import time , sleep
+from time import time
 from os import system
 from colorama import Back, init
 init(autoreset=True)
@@ -18,7 +18,6 @@ for i in range(times):
         scor += 1
         tre += est
 
-    sleep(0.4)
     system("CLS")
         
 print(f"your score is : {scor}/{times}")
