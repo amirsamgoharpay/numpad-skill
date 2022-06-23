@@ -21,5 +21,8 @@ pip install os
 pip install colorama
 ```
 > if you have all of them you dont have to download them again
+## You :D
+dont forget to let me know what should i add to this project 
+Thank you and i hope this project helps you on typing with numpad 
 
 
