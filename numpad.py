@@ -18,21 +18,36 @@ elif os_base == 'posix':
 
 else:
     # IF Using Anything Else that is Unknown...
-    print("Your Operating System is Unknown to this Program, Clearing your Terminal Won't be Available.")
+    print("NOTE: Your Operating System is Unknown to this Program, Clearing your Terminal Won't be Available.")
 
-for i in range(times):
-    num = randint(1000000 , 10000000)
-    print(Back.GREEN + str(num))
-    start = time()
-    inp = int(input('type the num with numpad : '))
-    end = time()
-    est = end - start
-    if num == inp :
-        scor += 1
-        tre += est
+try:
+    for i in range(times):
+        num = randint(1000000 , 10000000)
+        print(Back.GREEN + str(num))
+        start = time()
+        inp = int(input('type the num with numpad : '))
+        end = time()
+        est = end - start
+        if num == inp :
+            scor += 1
+            tre += est
 
-    system("CLS")
+        if os_base == "nt":
+            system("CLS")
         
-print(f"your score is : {scor}/{times}")
-print(f"avrage time for typing {scor} num : {tre/scor}")
-input()
+        elif os_base == "posix":
+            system("clear")
+        
+        else:
+            print("NOTE: Your Operating System is Unknown to this Program, Clearing your Terminal Won't be Available.")
+
+
+    print(f"your score is : {scor}/{times}")
+    print(f"avrage time for typing {scor} num : {tre/scor}")
+    input()
+
+except KeyboardInterrupt:
+    exit()
+
+finally:
+    print("Program Finished.")
